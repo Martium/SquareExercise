@@ -18,12 +18,12 @@ namespace SquareExercise.SqlLiteCommands
             return getLastId;
         }
 
-        public static string AddNewCoordinates(CoordinateModel coordinates, int newId)
+        public static string AddNewCoordinates(PointModel points, int newId)
         {
             string createNewCoordinates = 
                 $@"
                     INSERT INTO '{CoordinatesTableName}'
-                    Values ( {newId}, {coordinates.PointX}, {coordinates.PointY}
+                    Values ( {newId}, {points.CoordinateX}, {points.CoordinateY}
                     );
                 ";
 

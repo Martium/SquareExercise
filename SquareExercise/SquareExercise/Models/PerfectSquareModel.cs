@@ -2,9 +2,9 @@
 {
     public class PerfectSquareModel
     {
-        public  CoordinateModel PointA { get; set; }
-        public CoordinateModel PointB { get; set; }
-        public CoordinateModel PointC { get; set; }
-        public CoordinateModel PointD { get; set; }
+        public  PointModel PointA { get; set; }
+        public PointModel PointB { get; set; }
+        public PointModel PointC { get; set; }
+        public PointModel PointD { get; set; }
     }
 }

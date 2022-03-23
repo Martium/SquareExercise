@@ -15,15 +15,6 @@ namespace SquareExercise.DependencyInjectionClass.Repository
         {
             _repository.InitializeDatabaseIfNotExist();
         }
-
-        public void DropTable()
-        {
-            _repository.DropAllTablesCommand();
-        }
-
-        public void CreateTable()
-        {
-            _repository.CreateAllTablesCommand();
-        }
+       
     }
 }

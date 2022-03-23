@@ -34,8 +34,6 @@ namespace SquareExercise
             try
             {
                 Repository.InitializeRepositoryIfNotExist();
-                Repository.DropTable();
-                Repository.CreateTable();
 
                 isDatabaseInitialize = true;
             }

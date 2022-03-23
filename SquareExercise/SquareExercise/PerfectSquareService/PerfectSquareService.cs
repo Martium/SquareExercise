@@ -22,17 +22,17 @@ namespace SquareExercise.PerfectSquareService
         {
             bool isSquare;
 
-            double aPointX = squareModel.PointA.PointX;
-            double aPointY = squareModel.PointA.PointY;
+            double aPointX = squareModel.PointA.CoordinateX;
+            double aPointY = squareModel.PointA.CoordinateY;
 
-            double bPointX = squareModel.PointB.PointX;
-            double bPointY = squareModel.PointB.PointY;
+            double bPointX = squareModel.PointB.CoordinateX;
+            double bPointY = squareModel.PointB.CoordinateY;
 
-            double cPointX = squareModel.PointC.PointX;
-            double cPointY = squareModel.PointC.PointY;
+            double cPointX = squareModel.PointC.CoordinateX;
+            double cPointY = squareModel.PointC.CoordinateY;
 
-            double dPointX = squareModel.PointD.PointX;
-            double dPointY = squareModel.PointD.PointY;
+            double dPointX = squareModel.PointD.CoordinateX;
+            double dPointY = squareModel.PointD.CoordinateY;
 
             double distancePointAToB = CountDistance(firstXPoint: aPointX, firstYPoint: aPointY, secondXPoint: bPointX,
                 secondYPoint: bPointY);
@@ -85,7 +85,7 @@ namespace SquareExercise.PerfectSquareService
             throw new NotImplementedException();
         }
 
-        public List<CountPerfectSquareModel> GetAllPointPossibilities(List<CoordinateModel> coordinatesList)
+        public List<CountPerfectSquareModel> GetAllPointPossibilities(List<PointModel> coordinatesList)
         {
             var possibleSquareList = new List<PerfectSquareModel>();
             var list = FillListWithCoordinates(coordinatesList);
@@ -129,7 +129,7 @@ namespace SquareExercise.PerfectSquareService
             return squareList;
         }
 
-        private List<PerfectSquareModel> FillListWithCoordinates(List<CoordinateModel> coordinateList)
+        private List<PerfectSquareModel> FillListWithCoordinates(List<PointModel> coordinateList)
         {
             List<PerfectSquareModel> newList = new List<PerfectSquareModel>();
 

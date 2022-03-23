@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using SquareExercise.Interface;
-using SquareExercise.Models;
+﻿using SquareExercise.Interface;
 
 namespace SquareExercise.DependencyInjectionClass.Service
 {
@@ -12,7 +10,6 @@ namespace SquareExercise.DependencyInjectionClass.Service
         {
             _shape = shape;
         }
-
       
     }
 }

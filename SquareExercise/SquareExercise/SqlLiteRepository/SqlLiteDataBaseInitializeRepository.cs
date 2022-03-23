@@ -43,6 +43,26 @@ namespace SquareExercise.SqlLiteRepository
             }
         }
 
+        private void DropAllTablesCommand()
+        {
+            var allTableCommands = CreateTablesCommand.CreateTablesCommands();
+
+            foreach (var tableCommand in allTableCommands)
+            {
+                DropTable(tableCommand.Key);
+            }
+        }
+
+        private void CreateAllTablesCommand()
+        {
+            var allTableCommands = CreateTablesCommand.CreateTablesCommands();
+
+            foreach (var tableCommand in allTableCommands)
+            {
+                CreateTable(tableCommand.Value);
+            }
+        }
+
         public void InitializeDatabaseIfNotExist()
         {
             if (File.Exists(SqlLiteDataBaseConfiguration.DatabaseFile))
@@ -64,26 +84,9 @@ namespace SquareExercise.SqlLiteRepository
             }
 
             SQLiteConnection.CreateFile(SqlLiteDataBaseConfiguration.DatabaseFile);
-        }
 
-        public void DropAllTablesCommand()
-        {
-            var allTableCommands = CreateTablesCommand.CreateTablesCommands();
-
-            foreach(var tableCommand in allTableCommands)
-            {
-                DropTable(tableCommand.Key);
-            }
-        }
-
-        public void CreateAllTablesCommand()
-        {
-            var allTableCommands = CreateTablesCommand.CreateTablesCommands();
-
-            foreach(var tableCommand in allTableCommands)
-            {
-                CreateTable(tableCommand.Value);
-            }
+            DropAllTablesCommand();
+            CreateAllTablesCommand();
         }
     }
 }

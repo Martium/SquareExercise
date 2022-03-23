@@ -6,10 +6,10 @@ namespace SquareExercise.Interface
     public interface IRepositoryQueryCalls
     { 
         int GetNewId();
-        void AddNewCoordinates(CoordinateModel coordinates, int newId);
-        List<CoordinateModel> GetAllExistingCoordinates();
-        public CoordinateModel GetSpecificCoordinateById(int id); 
+        void AddNewCoordinates(PointModel points, int newId);
+        List<PointModel> GetAllExistingCoordinates();
+        public PointModel GetSpecificCoordinateById(int id); 
         int GetLastIdIfExistsOrReturnZero();
-        void AddNewCoordinateList(List<CoordinateModel> coordinateList);
+        void AddNewCoordinateList(List<PointModel> coordinateList);
     }
 }

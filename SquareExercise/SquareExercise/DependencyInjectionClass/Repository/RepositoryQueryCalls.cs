@@ -18,17 +18,17 @@ namespace SquareExercise.DependencyInjectionClass.Repository
             return _repositoryQueryCalls.GetNewId();
         }
 
-        public void AddNewCoordinates(CoordinateModel coordinates, int newId)
+        public void AddNewCoordinates(PointModel points, int newId)
         { 
-            _repositoryQueryCalls.AddNewCoordinates(coordinates, newId);
+            _repositoryQueryCalls.AddNewCoordinates(points, newId);
         }
 
-        public List<CoordinateModel> GetAllExistingCoordinates()
+        public List<PointModel> GetAllExistingCoordinates()
         {
             return  _repositoryQueryCalls.GetAllExistingCoordinates();
         }
 
-        public CoordinateModel GetSpecificCoordinatesById(int id)
+        public PointModel GetSpecificCoordinatesById(int id)
         {
             return _repositoryQueryCalls.GetSpecificCoordinateById(id);
         }
@@ -38,7 +38,7 @@ namespace SquareExercise.DependencyInjectionClass.Repository
             return _repositoryQueryCalls.GetLastIdIfExistsOrReturnZero();
         }
 
-        public void AddNewCoordinateList(List<CoordinateModel> coordinateList)
+        public void AddNewCoordinateList(List<PointModel> coordinateList)
         {
             _repositoryQueryCalls.AddNewCoordinateList(coordinateList);
         }

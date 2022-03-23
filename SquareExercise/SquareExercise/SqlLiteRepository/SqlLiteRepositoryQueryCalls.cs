@@ -35,20 +35,20 @@ namespace SquareExercise.SqlLiteRepository
             }
         }
 
-        public void AddNewCoordinates(CoordinateModel coordinates , int newId)
+        public void AddNewCoordinates(PointModel points , int newId)
         {
             using (var dbConnection = new SQLiteConnection(SqlLiteDataBaseConfiguration.ConnectionString))
             {
                 dbConnection.Open();
 
                 string addNewCoordinatesCommand =
-                    SqlLiteQueryCommands.AddNewCoordinates(coordinates, newId);
+                    SqlLiteQueryCommands.AddNewCoordinates(points, newId);
 
                 dbConnection.Execute(addNewCoordinatesCommand);
             }
         }
 
-        public List<CoordinateModel> GetAllExistingCoordinates()
+        public List<PointModel> GetAllExistingCoordinates()
         {
             using (var dbConnection = new SQLiteConnection(SqlLiteDataBaseConfiguration.ConnectionString))
             {
@@ -56,12 +56,12 @@ namespace SquareExercise.SqlLiteRepository
 
                 string getAllCommand = SqlLiteQueryCommands.GetAllExistingCoordinates();
 
-                IEnumerable<CoordinateModel> getAllExistingCoordinates = dbConnection.Query<CoordinateModel>(getAllCommand);
+                IEnumerable<PointModel> getAllExistingCoordinates = dbConnection.Query<PointModel>(getAllCommand);
                 return getAllExistingCoordinates.ToList();
             }
         }
 
-        public CoordinateModel GetSpecificCoordinateById(int id)
+        public PointModel GetSpecificCoordinateById(int id)
         {
             using (var dbConnection = new SQLiteConnection(SqlLiteDataBaseConfiguration.ConnectionString))
             {
@@ -69,13 +69,13 @@ namespace SquareExercise.SqlLiteRepository
 
                 string getSpecificCoordinatesCommand = SqlLiteQueryCommands.GetSpecificCoordinateById(id);
 
-                var getSpecificCoordinates = dbConnection.QuerySingle<CoordinateModel>(getSpecificCoordinatesCommand);
+                var getSpecificCoordinates = dbConnection.QuerySingle<PointModel>(getSpecificCoordinatesCommand);
 
                 return getSpecificCoordinates;
             }
         }
 
-        public void AddNewCoordinateList(List<CoordinateModel> coordinateList)
+        public void AddNewCoordinateList(List<PointModel> coordinateList)
         {
             using (var dbConnection = new SQLiteConnection(SqlLiteDataBaseConfiguration.ConnectionString))
             {
@@ -85,10 +85,10 @@ namespace SquareExercise.SqlLiteRepository
 
                 foreach (var coordinates in coordinateList)
                 {
-                    var coordinate = new CoordinateModel()
+                    var coordinate = new PointModel()
                     {
-                        PointX = coordinates.PointX,
-                        PointY = coordinates.PointY
+                        CoordinateX = coordinates.CoordinateX,
+                        CoordinateY = coordinates.CoordinateY
                     };
 
                     string addNewCoordinates = SqlLiteQueryCommands.AddNewCoordinates(coordinate, newId);

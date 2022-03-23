@@ -6,6 +6,6 @@ namespace SquareExercise.Interface
     public interface IShapeService
     {
          bool ValidateShapeByCoordinates();
-         List<CountPerfectSquareModel> GetAllPointPossibilities(List<CoordinateModel> coordinatesList);
+         List<CountPerfectSquareModel> GetAllPointPossibilities(List<PointModel> coordinatesList);
     }
 }
